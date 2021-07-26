@@ -28,7 +28,7 @@ def login_validation():
     email = request.form.get('email')
     password = request.form.get('password')
 
-    cursor.excute("""SELECT * FROM `Users` WHERE `email` LIKE '{}' AND `password` LIKE '{}'"""
+    cursor.execute("""SELECT * FROM `Users` WHERE `email` LIKE '{}' AND `password` LIKE '{}'"""
                   .format(email, password))
     Users = cursor.fetchall()
     if len(Users) > 0:
