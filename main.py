@@ -4,7 +4,7 @@ import mysql.connector
 app = Flask(__name__)
 
 conn = mysql.connector.connect(host="remotemysql.com", user="hmbIEv0Yo6", password="AQFfhdveF5",
-                               database="sql11426049", )
+                               database="hmbIEv0Yo6", )
 cursor = conn.cursor()
 
 
@@ -42,10 +42,10 @@ def add_user():
     email=request.form.get('uemail')
     password=request.form.get('upassword')
 
-    cursor.execute("""INSERT INTO `Users`(`user_id`,`name`,`email`,`password`)
+    cursor.execute("""INSERT INTO `Users`(`user_id`,`user_name`,`email`,`password`)
     VALUES (NULL, '{}','{}','{}')""".format(name,email,password))
     conn.commit()
-    return "..."
+    return "User registered sucessfully"
 
 
 if __name__ == "__main__":
