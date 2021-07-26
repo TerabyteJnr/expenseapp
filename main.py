@@ -43,7 +43,8 @@ def add_user():
     password=request.form.get('upassword')
 
     cursor.execute("""INSERT INTO `Users`(`user_id`,`name`,`email`,`password`)
-    VALUES """)
+    VALUES (NULL, '{}','{}','{}')""".format(name,email,password))
+    conn.commit()
     return "..."
 
 
