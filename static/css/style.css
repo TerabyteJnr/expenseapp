@@ -8,3 +8,7 @@
  .mt-100{
  margin-top:50px;
  }
+ .book-list {
+  margin-top: 50px;
+  visibility: hidden;
+}
